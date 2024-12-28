@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora Actual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1919;
+        }
+        #reloj {
+            font-size: 3rem;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div id="reloj"></div>
+
+    <script>
+        function actualizarHora() {
+            const ahora = new Date();
+            const hora = ahora.toLocaleTimeString();
+            document.getElementById('reloj').textContent = hora;
+        }
+
+        // Actualizar la hora cada segundo
+        setInterval(actualizarHora, 1000);
+        // Mostrar la hora inmediatamente al cargar
+        actualizarHora();
+    </script>
+</body>
+</html>
